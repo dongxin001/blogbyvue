@@ -1,0 +1,283 @@
+/*内容部分*/
+.contBox{
+	width: 100%;
+	padding-top: 20px;
+}
+/*内容部分---左边*/
+.contBoxLeft{
+	float: left;
+	width: 75%;
+}
+.siteLisTitle:hover{
+	width: 300px;
+	font-size: 18px;
+	box-shadow: 4px 4px 6px #666;
+}
+.siteLisTitle{
+    width: 270px;
+    height: 35px;
+    background: #4a71ab;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 3px #666;
+    font-size: 16px;
+    transition: 1s;
+}
+.siteLisTitle span{
+	color: white;
+	line-height: 35px;
+	font-weight: bold;
+}
+.siteLisBox{
+	margin-bottom: 15px;
+}
+/*css3翻转3D*/
+#container_box{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#container_box li{
+	width: 32%;
+	margin:0 18px 20px 0;
+	float: left;
+	/*border: 5px solid #c7c7c7;*/
+}
+#container_box li:nth-last-child(1){
+	margin-right: 0;
+}
+#container_box img{
+	width: 100%;
+}
+#container_box a{
+	float: left;
+	position: relative;
+}
+.lisText{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width:100%;
+	background:#f1f1f1;
+	font-size:16px;
+	color:#000;
+	line-height:26px;
+	text-align: center;
+	z-index: 2;
+}
+.container{
+	position: relative; 
+	height:190px; 
+	width: 100%; 
+	margin: 0 auto;
+	float: left;
+	cursor:pointer;
+	list-style:none;
+	/*padding:20px;*/
+    -webkit-perspective: 800px;/*3d场景*/
+    -moz-perspective: 800px;
+}
+.container div {position:absolute; left:0; top:0; width:290px; height: 100%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+.container div.lower {
+	font-family: arial; 
+	background: #4cc9d8;
+	width: 100%; 
+	height: 100%;
+	padding: 10px 20px 0;
+    background: -moz-linear-gradient(-45deg, #4cc9d8, #D94B01 100%);
+    background:-webkit-linear-gradient(-45deg,#4cc9d8,#D94B01);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;/*抖动*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+.container div.lower h1 {font-size:20px;color:#000; line-height:40px;border-bottom:3px solid orangered;}
+.container div.lower p {font-size:12px;color:#000; line-height:20px;margin-bottom: 8px;}
+.container div.lower a {color:orangered;}
+.container div.upper {
+	/*padding:20px;*/
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+}
+.container div.upper img {border:5px solid #ccc;width:310px;}
+.container:hover div.lower {
+	-moz-transform: rotateY(0);
+	-webkit-transform: rotateY(0);
+}
+.container:hover div.upper {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+/*每日一语*/
+.pearlsBox{
+	width: 100%;
+	padding: 0 20px;
+    box-shadow: 0px 1px 20px 2px #666;
+    margin-bottom: 35px;
+    line-height: 35px;
+    border-left: 5px solid #4a71ab;
+    background: white;
+}
+.pearlsName{
+	font-size: 16px;
+	font-weight: bold;
+}
+.articleBox,.article-list{
+	width: 100%;
+}
+
+
+
+/*内容部分---右边*/
+.contBoxRight{
+	float: right;
+	width: 24%;
+}
+.headMould{
+	background: #fff;
+	margin-bottom: 25px;
+}
+.headMouldIns{
+	border-left: 5px solid #4a71ab;
+	padding-left: 8px;
+	line-height: 28px;
+    font-size: 18px;
+	margin-bottom: 10px;
+}
+.headMould ul{
+	padding: 5px;
+}
+.introLis{
+	color: #526163;
+	font-size: 14px;
+	line-height: 20px;
+    padding-left: 10px;
+}
+/*当前时间*/
+.nowTime{
+	height: 30px; 
+	font-size: 26px;
+    font-family: Microsoft Yahei;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 1px;
+    background: #00b8ec;
+    color: white;
+}
+.calendarBox{
+	width: 100%;
+}
+
+
+/*网页设计流程*/
+.webDesignBox{
+	width: 100%;
+	padding-bottom: 10px;
+}
+.webDesignLis{
+	width: 100%;
+	padding-left: 10px;
+}
+.wdLisCont{
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	color: #526163;
+	font-size: 16px;
+	line-height: 32px;
+	padding-left: 5px;
+}
+.wdLisCont:hover{
+	background: #4a71ab;
+	border-radius: 3px;
+}
+/*热门推荐*/
+.changeBoxs,.tabHeadBox,.tabChangeCont{
+	width: 100%;
+}
+.tabHeadCont{
+	float: left;
+	color: #526163;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 30px;
+	text-align: center;
+	width: 50%;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+.tabHeadActive{
+	color: #4a71ab;
+	border-bottom: 1px solid #4a71ab;
+}
+.tabChangeCont{
+	height: 210px; 
+	position: relative;
+	overflow: hidden;
+}
+.tabContItem{
+	width: 200%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 1s;
+}
+.tabContLis{
+	width: 50%;
+	float: left;
+}
+.tabLisText a{
+	display: block;
+    width: 100%;
+	border-bottom: 1px solid #ccc;
+	line-height: 32px;
+	padding-left: 30px;
+	color: #526163;
+	font-size: 16px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tabLisText a:hover{
+	color: black;
+}
+.orderBox{
+	width: 20px;
+	position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.orderBox li{
+	font-size: 16px;
+	text-align: center;
+	border-radius: 5px;
+	width:100%;
+	height: 20px;
+	margin: 6px 0 13px 0;
+	color: white;
+}
+.orderOne{
+	background: #ff858e;
+}
+.orderTwo{
+	background: #77d549;
+}
+.orderThree{
+	background: #62c1ff;
+}
+.orderFour,.orderFive,.orderSix{
+	background: #979598;
+}

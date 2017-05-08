@@ -1,0 +1,76 @@
+/*碎言碎语*/
+.diaryBox{
+	width: 100%;
+	background: url(../image/art_bg.jpg) repeat-y 1000px 0;
+	margin-top: 20px;
+}
+.diaryCont,.diaryLis,.diaryCont{
+	width: 100%;
+}
+.diaryLis{
+	margin-bottom: 20px;
+}
+.leftCont,.rightCont{
+	position: relative;
+}
+.leftCont{
+	float: left;
+	width: 970px;
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 5px;
+	padding: 20px 15px;
+}
+.rightCont{
+	float: right;
+	width: 176px;
+	padding-top: 13px;
+}
+.shapes{
+	display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 0 20px 22px;
+    border-color: transparent transparent transparent #CCCCCE;
+    position: absolute;
+    right: -22px;
+    top: 12px;
+    opacity: 0;
+}
+.posDot{
+	display: block;
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    background: #CCCCCE;
+    border: 3px solid #ece8da;
+}
+.diaryTime{
+    width: 160px;
+    line-height: 35px;
+    background: #4a71ab;
+    border-radius: 0px 40px;
+    text-align: center;
+    color: #fff;
+}
+.leftCont:hover{
+	background: #CCCCCE;
+}
+.leftCont:hover .shapes{
+	opacity: 1;
+}
+.rightCont:hover .posDot{
+	background: #4a71ab;
+}
+.diaryText{
+	font-size: 16px;
+	line-height: 22px;
+	word-wrap: break-word; 
+	word-break: normal;
+}

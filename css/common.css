@@ -1,0 +1,234 @@
+/*公用样式集合*/
+@charset "utf-8";
+body{
+	/*min-width: 1270px;*/
+	background: #ece8da;
+	font-family: 'Microsoft YaHei';
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+#ihome{
+	width: 1200px;
+	margin: 0 auto;
+}
+/*头部*/
+.headerBox{
+	width: 100%;
+	height: 20px;
+	background-color: #000;
+	box-shadow: 0px 5px 5px #666;
+	position: relative;
+}
+.flowerImg{
+	position: absolute;
+	right: 0px; 
+	top: -32px;
+	width: 160px;
+	height: 230px;
+	overflow: hidden;
+}
+.flowerImg img{
+	width: 100%;
+}
+.headTitle{
+    padding: 10px 0 0 15px;
+    color: #4a71ab;
+}
+h1{
+	font-family: "微软雅黑";
+	font-size: 36px;
+}
+.ana{
+	font-size: 12px;
+	line-height: 26px;
+	padding-left: 30px;
+}
+/*导航*/
+.headNav{
+	height: 32px;
+	margin: 15px 0 20px 0;
+}
+.navLis{
+	float: left;
+	margin-right: 5px;
+}
+.navLis a{
+	display: block;
+	padding: 0 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: green;
+	line-height: 32px;
+}
+.navLis a:hover,a.navActive{
+	color: white;
+	background: green;
+	border-radius: 5px;
+}
+.navLine{
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(to right, #ece8da , gray, #ece8da);
+}
+/*站内搜索*/
+.search-wrap{
+	background-color: #fff;
+	position: relative;
+    padding-bottom: 15px;
+}
+.searchVal{
+	display: block;
+	width: 85%;
+	margin: 0 auto;
+	height: 30px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #556566;
+	padding-left: 10px;
+}
+.searchBtn{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: url(../image/searchBtn.png) 50% no-repeat;
+}
+/*页尾*/
+.footBox{
+	width: 100%;
+	height: 55px;
+	background-color: #000;
+	margin-top: 40px;
+}
+.pageEndCont{
+	width: 1200px;
+	margin: 0 auto;
+	color: white;
+	font-size: 14px;
+	line-height: 55px;
+	text-align: center;
+}
+/*页面右侧功能区*/
+.fixed-side-menu {
+	position:fixed;
+	right:10px;
+	bottom:100px;
+	width:50px
+}
+.fixed-side-menu .list li {
+	width:48px;
+	height:48px;
+	background-color:#fff;
+	border:1px solid #ececec;
+	border-bottom:0
+}
+.fixed-side-menu .list li#returnTop {
+	cursor:pointer;
+	display:none
+}
+.fixed-side-menu .list li.wechat-box-wrap {
+	position:relative
+}
+.wechat-img {
+	display:none;
+	position:absolute;
+    top: -75px;
+    left: -130px;
+    z-index: 888;
+    padding: 6px;
+    border: 5px solid #4a71ab;
+    background: white;
+}
+.fixed-side-menu .list li a {
+	display:block;
+	position:relative;
+	top:15px;
+	left:14px;
+	width:20px;
+	height:20px
+}
+.fixed-side-menu .list li a.ico-bg {
+	background:url(../image/icons.png) no-repeat;
+}
+.fixed-side-menu .list li a.return-top {
+	width:22px;
+	left:13px;
+	background-position:-27px -42px
+}
+.fixed-side-menu .list li a.qq {
+	background-position:0 0
+}
+.fixed-side-menu .list li a.wechat {
+	width:23px;
+	left:13px;
+	background-position:-1px -22px
+}
+#wechatBoxWrap:hover .wechat-img{
+	display: block;
+}
+//二级页面
+.artClass{
+	width: 100%;
+}
+.artClass .artClassBox{
+	padding-left: 15px;
+}
+.artClassLis{
+	float: left;
+	width: 45%;
+	height: 40px;
+	background: #e5e5e5;
+	margin: 0 12px 10px 0;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.artCifyText{
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+}
+.colorLayer{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: #4a71ab;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 34%;
+	opacity: 0;
+	transition: 0.3s;
+}
+.artClassLis:hover .colorLayer{
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+	left: 0;
+	opacity: 0.5;
+}
+.artClassLis:hover .artCifyText{
+	font-weight: bold;
+}
+.siteLevel{
+	border-left: 5px solid #4a71ab;
+	padding-left: 8px;
+}
+.siteLevel span{
+	font-size: 18px;
+}
+.artLines{
+	margin-top: 5px;
+	border-bottom: 1px solid #4a71ab;
+}
+
+
+

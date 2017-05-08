@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pageHome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/speak.css"/>
+		<title>前端控-闲言碎语</title>
+	</head>
+	<body>
+		<!--页头-->
+		<div class="headerBox">
+			<div class="flowerImg"><img src="image/flowerImg.png"/></div>
+		</div>
+		<section id="ihome" v-cloak>
+			<!--头部-->
+			<div class="headTitle">
+				<h1>前端控</h1>
+				<p class="ana">聆听不代表沉默，有时安静也是一种力量。</p>
+			</div>
+			<div class="headNav">
+				<ul class="navItem clearfix">
+					<li class="navLis"><a v-on:click="navClick($event)" href="index.html">首页</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="siteDesign.html">网站设计</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="chatCode.html">聊聊代码</a></li>
+					<li class="navLis"><a class="navActive" v-on:click="navClick($event)" href="speak.html">碎言碎语</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="leave.html">留言板</a></li>
+				</ul>
+			</div>
+			<div class="navLine"></div>
+			<!--内容部分-->
+			<div class="contBox clearfix">
+				<!--网站建设文章相关-->
+				<div class="siteLevel">
+					<span>> 碎言碎语</span>
+				</div>
+				<div class="artLines"></div>
+				<ul class="diaryBox">
+					<li class="diaryLis" v-for="diaryLis in diaryItem">
+						<div class="diaryCont clearfix">
+							<div class="leftCont">
+								<p class="diaryText">{{diaryLis.diaryText}}</p>
+								<span class="shapes"></span>
+							</div>
+							<div class="rightCont">
+								<div class="diaryTime">{{diaryLis.diaryTime}}</div>
+								<span class="posDot"></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!--页尾-->
+		<div class="footBox">
+			<p class="pageEndCont">Design by：東杺　　Copyright© 2017-未来</p>
+		</div>
+		<!--右下角悬浮功能区-->
+		<div class="fixed-side-menu">
+			<ul class="list">
+				<li id="returnTop" style="display: list-item;">
+					<a class="ico-bg return-top" href="javascript:;">
+					</a>
+				</li>
+				<li>
+					<a class="ico-bg qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2804678162&amp;site=qq&amp;menu=yes" target="_blank">
+					</a>
+				</li>
+				<li id="wechatBoxWrap" class="wechat-box-wrap">
+					<a class="ico-bg wechat" href="javascript:;"></a>
+					<div class="wechat-img">
+						<img src="image/dongxin.jpg" width="100" height="100" alt="東杺的微信号">
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--引入Vue相关文件-->
+		<script src="js/vue.js"></script>
+		<!--引入文章推荐的数据渲染html-->
+		<script src="js/jquery/jquery-3.1.1.js"></script>
+		<script src="js/jquery-ui-1.10.1.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/pageHome.js"></script>
+		
+		
+		<script type="text/javascript">
+			//返回顶部
+			$('#returnTop').on('click', function(){
+				$('body,html').animate({scrollTop:0},1000);
+                return false;
+			})
+		</script>
+	</body>
+</html>

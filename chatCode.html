@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/article.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pageHome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/siteDesign.css"/>
+		<title>前端控-聊聊代码</title>
+	</head>
+	<body>
+		<!--页头-->
+		<div class="headerBox">
+			<div class="flowerImg"><img src="image/flowerImg.png"/></div>
+		</div>
+		<section id="ihome" v-cloak>
+			<!--头部-->
+			<div class="headTitle">
+				<h1>前端控</h1>
+				<p class="ana">聆听不代表沉默，有时安静也是一种力量。</p>
+			</div>
+			<div class="headNav">
+				<ul class="navItem clearfix">
+					<li class="navLis"><a v-on:click="navClick($event)" href="index.html">首页</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="siteDesign.html">网站设计</a></li>
+					<li class="navLis"><a class="navActive" v-on:click="navClick($event)" href="chatCode.html">聊聊代码</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="speak.html">碎言碎语</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="leave.html">留言板</a></li>
+				</ul>
+			</div>
+			<div class="navLine"></div>
+			<!--内容部分-->
+			<div class="contBox clearfix">
+				<!--左边部分-->
+				<div class="contBoxLeft">
+					<!--聊聊代码文章相关-->
+					<div class="siteLevel">
+						<span>> 聊聊代码</span>
+					</div>
+					<div class="artLines"></div>
+					<div class="articleBox">
+						<div class="article-list">
+							<ul class="list">
+								<li class="li-text clearfix" v-for="chatLis in artChatList">
+									<art-chat :chat-lis='chatLis'></art-chat>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--右边部分-->
+				<div class="contBoxRight">
+					<!--站内搜索-->
+					<div class="headMould">
+						<h3 class="headMouldIns">站内搜索</h3>
+						<div class="search-wrap">
+				   			<form name="formsearch" action="#" method="post">
+						        <input name="q" type="text" id="searchVal" class="searchVal" placeholder="请输入你需要的内容" autocomplete="off">   
+						        <input class="searchBtn" type="submit" value="">
+						    </form>
+			           	</div>
+					</div>
+					<!--文章分类-->
+					<div class="headMould">
+						<h3 class="headMouldIns">文章分类</h3>
+						<div class="artClass">
+				   			<ul class="artClassBox clearfix">
+				   				<li class="artClassLis" v-for="artCify in artCifyItem">
+				   					<a class="artCifyText" href="javascript:;">{{artCify}}</a>
+				   					<span class="colorLayer"></span>
+				   				</li>
+				   			</ul>
+			           	</div>
+					</div>
+					<!--网页设计流程-->
+					<div class="headMould">
+						<h3 class="headMouldIns">网页设计流程</h3>
+						<div class="webDesignBox">
+							<ul>
+								<li class="webDesignLis" v-for="wCont in wContLis">
+									<a v-bind:href="wCont.Url" class="wdLisCont">{{wCont.title}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--热门推荐-->
+					<div class="headMould">
+						<h3 class="headMouldIns">热门推荐</h3>
+						<div class="changeBoxs">
+							<div class="tabHeadBox clearfix">
+								<div class="tabHeadCont" v-bind:class="{tabHeadActive:activeText == '热搜排行'}" v-on:click="clickActive($event)">热搜排行</div>
+								<div class="tabHeadCont" v-bind:class="{tabHeadActive:activeText == '建站相关'}" v-on:click="clickActive($event)">建站相关</div>
+							</div>
+							<div class="tabChangeCont">
+								<div class="tabContItem clearfix">
+									<div class="tabContLis tabContLisL">
+										<ul>
+											<li class="tabLisText" v-for="hotLis in hotSearchLis">
+												<a v-bind:href="hotLis.Url" v-bind:title="hotLis.title">{{hotLis.title}}</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tabContLis tabContLisR">
+										<ul>
+											<li class="tabLisText" v-for="creatLis in creatSiteLis">
+												<a v-bind:href="creatLis.Url" v-bind:title="creatLis.title">{{creatLis.title}}</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<ol class="orderBox">
+									<li class="orderOne">1</li>
+									<li class="orderTwo">2</li>
+									<li class="orderThree">3</li>
+									<li class="orderFour">4</li>
+									<li class="orderFive">5</li>
+									<li class="orderSix">6</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--页尾-->
+		<div class="footBox">
+			<p class="pageEndCont">Design by：東杺　　Copyright© 2017-未来</p>
+		</div>
+		<!--右下角悬浮功能区-->
+		<div class="fixed-side-menu">
+			<ul class="list">
+				<li id="returnTop" style="display: list-item;">
+					<a class="ico-bg return-top" href="javascript:;">
+					</a>
+				</li>
+				<li>
+					<a class="ico-bg qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2804678162&amp;site=qq&amp;menu=yes" target="_blank">
+					</a>
+				</li>
+				<li id="wechatBoxWrap" class="wechat-box-wrap">
+					<a class="ico-bg wechat" href="javascript:;"></a>
+					<div class="wechat-img">
+						<img src="image/dongxin.jpg" width="100" height="100" alt="東杺的微信号">
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--引入Vue相关文件-->
+		<script src="js/vue.js"></script>
+		<!--引入文章推荐的数据渲染html-->
+		<script src="js/jquery/jquery-3.1.1.js"></script>
+		<script src="js/jquery-ui-1.10.1.min.js"></script>
+		<script src="js/articleDatas.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/pageHome.js"></script>
+		<script src="js/artMould.js"></script>
+		
+		
+		<script type="text/javascript">
+			//返回顶部
+			$('#returnTop').on('click', function(){
+				$('body,html').animate({scrollTop:0},1000);
+                return false;
+			})
+		</script>
+	</body>
+</html>

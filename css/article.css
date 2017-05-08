@@ -1,0 +1,116 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.article-list .list li {
+	padding:25px 0;
+	border-bottom:1px solid #f0f0f0;
+	background-color:#fff;
+	margin-bottom:20px;
+}
+.article-list .list li:hover {
+	cursor:pointer;
+	border-radius:4px;
+	box-shadow:1px 3px 9px #ccc;
+	transition:.3s;
+}
+.article-list .list li .news-img-box {
+	position:relative;
+	padding-left:10px;
+	width:225px;
+	/*height:145px;*/
+}
+.news-list-img{
+	transition: 0.5s;
+}
+.news-list-img:hover {/*CSS3 blur滤镜实现图片模糊效果*/
+	-webkit-filter: blur(3px); /* Chrome, Opera */
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);    
+    filter: blur(3px);
+}
+.article-list .list li .news-content {
+	width:660px;
+}
+.article-list .list li .news-content a {
+	color:#3d3d3d;
+}
+.article-list .list li .news-content h3.title-h3 {
+	padding:10px 0;
+	color:#3d3d3d;
+	font-size:16px;
+}
+.article-list .list li .news-content .author-info {
+	height:33px;
+	line-height:33px;
+	color:#919898;
+	font-size:14px;
+}
+.article-list .list li .news-content .author-info a {
+	color:#919898;
+}
+.article-list .list li .news-content .author-info a:hover {
+	color:#15181b;
+}
+.article-list .list li .news-content .author-info p.author {
+	width:90px;
+	height:33px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.article-list .list li .news-content .author-info p.author span {
+	padding-left:10px;
+	position:relative;
+}
+.article-list .list li .news-content .author-info span.date-time {
+	display:block;
+	width:218px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	padding-right:5px;
+}
+.article-list .list li .news-content .author-info span.classify {
+	display:block;
+	width:130px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.article-list .list li .news-content p.news-info {
+	color:#526163;
+	overflow:hidden;
+	font-size:14px;
+	padding:8px 12px 3px 5px;
+}
+.article-list .list li.li-text .news-img-box .hot {
+	position: absolute;
+	width: 30px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: #fff;
+	background-color: #db4659;
+	top: 5px;
+	left: -10px;
+	z-index: 145;
+	font-size: 14px;
+}
+.hot span.triangle {
+	position:absolute;
+	top:24px;
+	left:-10px;
+	width:0;
+	height:0;
+	z-index:33;
+	border-left:10px solid transparent;
+	border-right:10px solid #df0d3a;
+	border-bottom:7px solid transparent;
+}
+.hot {
+	color:#fff;
+	background-color:#3472ef;
+}

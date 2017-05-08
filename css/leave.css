@@ -1,0 +1,53 @@
+/*留言板*/
+#app{
+	width: 90%;
+	margin: 0 auto;
+}
+#app textarea{
+	width: 100%;
+	max-width: 100%;
+	min-height:50px;
+	font-size: 16px;
+}
+.app ul{
+	width: 100%;
+}
+.lis{
+	width: 100%;
+	padding: 10px 25px;
+	margin: 10px 0;
+	position: relative;
+	background: #4a71ab;
+	transition: 1s;
+	border-left: 6px solid white;
+}
+.lis:hover{
+	box-shadow: 3px 3px 5px #666666;
+}
+.rankNum{
+	display: block;
+	color: white;
+	font-size: 18px;
+	line-height:24px;
+    padding-right: 5px;
+	word-wrap:break-word;
+}
+.btn{
+	width: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color:#fff;
+	background: #D44950;
+	border-radius: 10px;
+	position: absolute;
+	right:5px;
+	top: 6px;
+	cursor: pointer;
+	z-index: 2;
+	display: none;
+}
+.lis:hover .btn{
+	display: block;
+}

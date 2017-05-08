@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/article.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/vue_calendar.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pageHome.css"/>
+		<title>前端控-首页</title>
+	</head>
+	<body>
+		<!--页头-->
+		<div class="headerBox">
+			<div class="flowerImg"><img src="image/flowerImg.png"/></div>
+		</div>
+		<section id="ihome" v-cloak>
+			<!--头部-->
+			<div class="headTitle">
+				<h1>前端控</h1>
+				<p class="ana">聆听不代表沉默，有时安静也是一种力量。</p>
+			</div>
+			<div class="headNav">
+				<ul class="navItem clearfix">
+					<li class="navLis"><a class="navActive" v-on:click="navClick($event)" href="index.html">首页</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="siteDesign.html">网站设计</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="chatCode.html">聊聊代码</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="speak.html">碎言碎语</a></li>
+					<li class="navLis"><a v-on:click="navClick($event)" href="leave.html">留言板</a></li>
+				</ul>
+			</div>
+			<div class="navLine"></div>
+			<!--内容部分-->
+			<div class="contBox clearfix">
+				<!--左边部分-->
+				<div class="contBoxLeft">
+					<!--网站欣赏-->
+					<div class="siteLisTitle">
+						<span>网站欣赏 /</span><span> Web page appreciate</span>
+					</div>
+					<div class="siteLisBox">
+						<div class="siteLisCont">
+							<ul id="container_box" class="container_box clearfix">
+								<li class="container" v-for="low in allLow">
+									<div class="lower">
+										<h1>{{low.title}}</h1>
+										<p>{{low.cont}}</p>
+										<p><a v-bind:href="low.Url" target="_blank">Please/详情</a></p>
+									</div>
+									<div class="upper"><img v-bind:src="low.img" alt="作品集锦"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--每日一语-->
+					<div class="siteLisTitle">
+						<span>每日一语 /</span><span> A daily language</span>
+					</div>
+					<div class="pearlsBox">
+						如果你每天都在重复过去做过事情，那么你将只会获得已经拥有的东西。
+						<span class="pearlsName">——托尼·罗宾斯（Tony Robbins）</span>
+					</div>
+					<!--文章推荐-->
+					<div class="siteLisTitle">
+						<span>文章推荐 /</span><span> Recommended article</span>
+					</div>
+					<div class="articleBox">
+						<div class="article-list">
+							<ul class="list">
+								<li class="li-text clearfix" v-for="artLis in artList">
+									<art-item :art-lis='artLis'></art-item>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<!--右边部分-->
+				<div class="contBoxRight">
+					<!--个人说明-->
+					<div class="headMould">
+						<h3 class="headMouldIns">个人简介</h3>
+						<ul>
+							<li class="introLis">昵称：東杺</li>
+							<li class="introLis">职业：前端开发</li>
+							<li class="introLis">Q　Q：2804678162</li>
+							<li class="introLis">爱好：旅游、K歌</li>
+							<li class="introLis">邮箱：chenrz510@163.com</li>
+						</ul>
+					</div>
+					<!--站内搜索-->
+					<div class="headMould">
+						<h3 class="headMouldIns">站内搜索</h3>
+						<div class="search-wrap">
+				   			<form name="formsearch" action="#" method="post">
+						        <input name="q" type="text" id="searchVal" class="searchVal" placeholder="请输入你需要的内容" autocomplete="off">   
+						        <input class="searchBtn" type="submit" value="">
+						    </form>
+			           	</div>
+					</div>
+					<!--当前时间-->
+					<div class="headMould">
+						<h3 class="headMouldIns">当前时间</h3>
+						<div class="nowTime"></div>
+						<div class="calendarBox">
+							<!--动态添加进去日历插件-->
+							<div id="calendar">
+								<div class="month">
+									<ul>
+										<li class="arrow" @click="pickPre(currentYear,currentMonth)">
+											❮
+										</li>
+										<li class="year-month" @click="pickYear(currentYear,currentMonth)">
+											<span class="choose-year">
+												{{ currentYear }}
+											</span>
+											<span class="choose-month">
+												{{ currentMonth }}月
+											</span>
+										</li>
+										<li class="arrow" @click="pickNext(currentYear,currentMonth)">
+											❯
+										</li>
+									</ul>
+								</div>
+								<ul class="weekdays">
+									<li>一</li>
+									<li>二</li>
+									<li>三</li>
+									<li>四</li>
+									<li>五</li>
+									<li style="color:red">六</li>
+									<li style="color:red">日</li>
+								</ul>
+								<ul class="days">
+									<li @click="pick(day)" v-for="day in days">
+										<!--今天-->
+										<span v-if="day.getMonth()+1 != currentMonth" class="other-month">
+											{{ day.getDate() }}
+										</span>
+										<span v-else>
+											<!--今天-->
+											<span v-if="day.getFullYear() == new Date().getFullYear() && day.getMonth() == new Date().getMonth() && day.getDate() == new Date().getDate()"
+											class="active">
+												{{ day.getDate() }}
+											</span>
+											<span v-else>
+												{{ day.getDate() }}
+											</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--网页设计流程-->
+					<div class="headMould">
+						<h3 class="headMouldIns">网页设计流程</h3>
+						<div class="webDesignBox">
+							<ul>
+								<li class="webDesignLis" v-for="wCont in wContLis">
+									<a v-bind:href="wCont.Url" class="wdLisCont">{{wCont.title}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--热门推荐-->
+					<div class="headMould">
+						<h3 class="headMouldIns">热门推荐</h3>
+						<div class="changeBoxs">
+							<div class="tabHeadBox clearfix">
+								<div class="tabHeadCont" v-bind:class="{tabHeadActive:activeText == '热搜排行'}" v-on:click="clickActive($event)">热搜排行</div>
+								<div class="tabHeadCont" v-bind:class="{tabHeadActive:activeText == '建站相关'}" v-on:click="clickActive($event)">建站相关</div>
+							</div>
+							<div class="tabChangeCont">
+								<div class="tabContItem clearfix">
+									<div class="tabContLis tabContLisL">
+										<ul>
+											<li class="tabLisText" v-for="hotLis in hotSearchLis">
+												<a v-bind:href="hotLis.Url" v-bind:title="hotLis.title">{{hotLis.title}}</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tabContLis tabContLisR">
+										<ul>
+											<li class="tabLisText" v-for="creatLis in creatSiteLis">
+												<a v-bind:href="creatLis.Url" v-bind:title="creatLis.title">{{creatLis.title}}</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<ol class="orderBox">
+									<li class="orderOne">1</li>
+									<li class="orderTwo">2</li>
+									<li class="orderThree">3</li>
+									<li class="orderFour">4</li>
+									<li class="orderFive">5</li>
+									<li class="orderSix">6</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--页尾-->
+		<div class="footBox">
+			<p class="pageEndCont">Design by：東杺　　Copyright© 2017-未来</p>
+		</div>
+		<!--右下角悬浮功能区-->
+		<div class="fixed-side-menu">
+			<ul class="list">
+				<li id="returnTop" style="display: list-item;">
+					<a class="ico-bg return-top" href="javascript:;">
+					</a>
+				</li>
+				<li>
+					<a class="ico-bg qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2804678162&amp;site=qq&amp;menu=yes" target="_blank">
+					</a>
+				</li>
+				<li id="wechatBoxWrap" class="wechat-box-wrap">
+					<a class="ico-bg wechat" href="javascript:;"></a>
+					<div class="wechat-img">
+						<img src="image/dongxin.jpg" width="100" height="100" alt="東杺的微信号">
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--引入Vue相关文件-->
+		<script src="js/vue.js"></script>
+		<!--引入文章推荐的数据渲染html-->
+		<script src="js/jquery/jquery-3.1.1.js"></script>
+		<script src="js/jquery-ui-1.10.1.min.js"></script>
+		<script src="js/articleDatas.js"></script>
+		<script src="js/vue_calendar.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/pageHome.js"></script>
+		
+		<script type="text/javascript">
+			//返回顶部
+			$('#returnTop').on('click', function(){
+				$('body,html').animate({scrollTop:0},1000);
+                return false;
+			})
+		</script>
+	</body>
+</html>
