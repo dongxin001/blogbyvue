@@ -44,7 +44,7 @@
 					<ul>
 						<li class="lis" v-for="(item, idx) in list">
 							<span class="rankNum" v-text="(idx+1) + '. ' + item.cont"></span>
-							<span class="btn" title="删除" v-bind:index="idx" v-on:click="removeTodo">&times;</span>
+<!-- 							<span class="btn" title="删除" v-bind:index="idx" v-on:click="removeTodo">&times;</span> -->
 						</li>
 					</ul>
 				</div>
@@ -86,6 +86,8 @@
 		
 		
 		<script type="text/javascript">
+			var iH = $('body').height() + 30;
+			$('.contBox').css('min-height',iH);
 			
 			//返回顶部
 			$('#returnTop').on('click', function(){
