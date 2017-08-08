@@ -83,11 +83,15 @@
 		<script src="js/common.js"></script>
 		<script src="js/pageHome.js"></script>
 		<script src="js/artMould.js"></script>
-		
-		
 		<script type="text/javascript">
-			var iH = $('body').height() + 30;
-			$('.contBox').css('min-height',iH);
+			lybIH();//设置底部位置
+			function lybIH() {
+				var iH = $(window).height() - 270;
+				$('.contBox').css('min-height',iH);
+			}
+			$(window).resize(function() {
+				lybIH();
+			});
 			
 			//返回顶部
 			$('#returnTop').on('click', function(){
